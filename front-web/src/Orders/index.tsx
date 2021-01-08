@@ -10,22 +10,17 @@ import Footer from "../Footer";
 import { checkIsSelected } from "./helpers";
 import "./styles.css";
 
-function Orders(){
-
+function Orders() {
     const [products, setProducts] =  useState<Product[]>([]);
     const [selectedProducts, setSelectedProducts] =  useState<Product[]>([]);
     const [orderLocation, setOrderLocation] = useState<OrderLocationData>();
-    const totalPrice = selectedProducts .reduce((sum, item) => {
+    const totalPrice = selectedProducts.reduce((sum, item) => {
         return sum + item.price;
     }, 0);
 
     useEffect(() => {
-
-           fetchProducts()
-           .then(response => setProducts(response.data))
-           .catch(error => console.log(error))
-
-    }, []);
+           fetchProducts().then(response => setProducts(response.data)).catch(error => console.log(error))
+    },[]);
 
     const handleSelectProduct = (product: Product) => {
         const isAlreadySelected = checkIsSelected(selectedProducts, product);
