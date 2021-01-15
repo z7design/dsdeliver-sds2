@@ -4,8 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { forModalPresentationIOS } from "@react-navigation/stack/lib/typescript/src/TransitionConfigs/CardStyleInterpolators";
 import Home from "./Home";
 import Orders from "./Orders";
+import OrdersDatails from "./OrdersDetails";
 
-/* pilha de navegação*/ 
+/* pilha de navegação*/
 const Stack = createStackNavigator();
 
 function Routes(){
@@ -21,6 +22,7 @@ function Routes(){
             >
                 <Stack.Screen name="Home" component={Home}></Stack.Screen>
                 <Stack.Screen name="Orders" component={Orders}></Stack.Screen>
+                <Stack.Screen name="OrdersDetails" component={OrdersDatails}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>    );
 }
